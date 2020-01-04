@@ -7,8 +7,8 @@ var myWriteStream = fs .createWriteStream(__dirname + '/writeME.txt');
 
 var server =http.createServer(function(req, res){
     console.log('A request was made by: ' + req.url);
-    res.writeHead(200, {'Content-Type':'text/plain'});
-    var myReadStream = fs.createReadStream(__dirname+'/readME.txt', 'utf8');
+    res.writeHead(200, {'Content-Type':'text/html'});
+    var myReadStream = fs.createReadStream(__dirname+'/index.html', 'utf8');
     myReadStream.pipe(res);
 });
 var port = 4000;
